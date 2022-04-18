@@ -89,7 +89,33 @@ namespace CalculationChargeSmelting
 
         public decimal Persent;
 
-        public decimal Ugar;
+        public decimal Ugar
+        {
+            get
+            {
+                if (!elementUgars.ContainsKey(Name))
+                {
+                    return 0;
+                }
+                else
+                {
+                    return elementUgars[Name];
+                }
+            }
+            set
+            {
+                if (!elementUgars.ContainsKey(Name))
+                {
+                    elementUgars.Add(Name, value);
+                }
+                else
+                {
+                    elementUgars[Name] = value;
+                }
+            }
+        }
+
+        private static Dictionary<string, decimal> elementUgars = new Dictionary<string, decimal>();
         public ChemicalElement(string name, int number, decimal persent = 0,decimal ugar= 0)
         {
             Name = name;
