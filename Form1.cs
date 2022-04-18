@@ -24,10 +24,12 @@ namespace CalculationChargeSmelting
         private void LoadMaterials_Click(object sender, EventArgs e)
         {
             comboBox1.Items.Clear();
+            comboBox2.Items.Clear();
             MaterialManager.LoadInternal();
             foreach (var mat in MaterialManager.Current.materials)
             {
                 comboBox1.Items.Add(mat.ToString());
+                comboBox2.Items.Add(mat.ToString());
             }
         }
 
@@ -76,5 +78,14 @@ namespace CalculationChargeSmelting
             UpdateShichtMaterials();
         }
 
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

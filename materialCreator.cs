@@ -34,7 +34,7 @@ namespace CalculationChargeSmelting
             if(elementsToChose.SelectedItem != null)
             {
                 var elementName = elementsToChose.SelectedItem.ToString();
-                var element = new ChemicalElement(elementName, ChemicalElements.GetByName(elementName).Number, numericUpDown1.Value);
+                var element = new ChemicalElement(elementName, ChemicalElements.GetByName(elementName).Number, numericUpDown1.Value, numericUpDown2.Value);
                 var sameElementId = CreatingMaterial.chemicalElements.FindIndex(c => c.Name == element.Name);
                 if (sameElementId != -1)
                 {

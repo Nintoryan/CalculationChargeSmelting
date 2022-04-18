@@ -62,6 +62,7 @@ namespace CalculationChargeSmelting
             new ChemicalElement("Be",4),
             new ChemicalElement("C",6),
             new ChemicalElement("Mg",12),
+            new ChemicalElement("Al",13),
             new ChemicalElement("Si",14),
             new ChemicalElement("P",15),
             new ChemicalElement("S",16),
@@ -87,15 +88,18 @@ namespace CalculationChargeSmelting
         public int Number { get; private set;}
 
         public decimal Persent;
-        public ChemicalElement(string name, int number, decimal persent = 0)
+
+        public decimal Ugar;
+        public ChemicalElement(string name, int number, decimal persent = 0,decimal ugar= 0)
         {
             Name = name;
             Number = number;
             Persent = persent;
+            Ugar = ugar;
         }
         public override string ToString()
         {
-            return $"{Name} - {Persent:0.0}%";
+            return $"{Name} - {Persent:0.0}% - Угар={Ugar}%";
         }
     }
 }
