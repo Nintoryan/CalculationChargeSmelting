@@ -10,7 +10,12 @@ namespace CalculationChargeSmelting
     {
         public List<(Material, decimal)> CalculateShicht(List<Material> shichtMaterials, Material targetMat, decimal sumWeight)
         {
-
+            //Потребное содержание элементов целевого сплава в шихте
+            var A = new Dictionary<string, decimal>();
+            foreach(var e in targetMat.chemicalElements)
+            {
+                A.Add(e.Name, e.Persent * 100 / (100 - e.Ugar));
+            }
         }
     }
 }
