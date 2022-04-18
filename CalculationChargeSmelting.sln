@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculationChargeSmelting", "CalculationChargeSmelting.csproj", "{D1D4894C-6D4E-48B7-8C84-C04114CCFD40}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1D4894C-6D4E-48B7-8C84-C04114CCFD40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1D4894C-6D4E-48B7-8C84-C04114CCFD40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1D4894C-6D4E-48B7-8C84-C04114CCFD40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1D4894C-6D4E-48B7-8C84-C04114CCFD40}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A57BB7F3-8E9F-4FB3-A414-253A76D429BD}
+	EndGlobalSection
+EndGlobal
