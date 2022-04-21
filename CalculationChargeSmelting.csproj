@@ -50,8 +50,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calculator.cs" />
-    <Compile Include="Material.cs" />
+    <Compile Include="Scripts\Calculator.cs" />
+    <Compile Include="Scripts\ChemicalElement.cs" />
+    <Compile Include="Scripts\MaterialsManager.cs" />
+    <Compile Include="Scripts\Material.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,5 +97,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

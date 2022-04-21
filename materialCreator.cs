@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CalculationChargeSmelting.Scripts;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -12,15 +13,11 @@ namespace CalculationChargeSmelting
         {
             InitializeComponent();
         }
-
-        private void elementsToChose_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        private void elementsToChose_SelectedIndexChanged(object sender, EventArgs e){}
 
         private void materialCreator_Load(object sender, EventArgs e)
         {
-            elementsToChose.Items.AddRange(ChemicalElements.chemicalElements.Select(c => c.Name).ToArray());
+            elementsToChose.Items.AddRange(ChemicalElements.chemicalElements.Select(c=>c.ToString()).ToArray());
         }
 
         public Material CreatingMaterial;
@@ -28,23 +25,19 @@ namespace CalculationChargeSmelting
         {
             if(CreatingMaterial == null)
             {
-                CreatingMaterial = new Material();
-                CreatingMaterial.Name = textBox1.Text;
+                CreatingMaterial = new Material(textBox1.Text);
             }
             if(elementsToChose.SelectedItem != null)
             {
                 var elementName = elementsToChose.SelectedItem.ToString();
-                var element = new ChemicalElement(elementName, ChemicalElements.GetByName(elementName).Number, numericUpDown1.Value, numericUpDown2.Value);
-                var sameElementId = CreatingMaterial.chemicalElements.FindIndex(c => c.Name == element.Name);
-                if (sameElementId != -1)
+                var element = ChemicalElements.GetByName(elementsToChose.SelectedItem.ToString());
+                if (!CreatingMaterial.AddElement(element, (int)persent.Value))
                 {
-                    CreatingMaterial.chemicalElements[sameElementId].Persent += numericUpDown1.Value;
+                    MessageBox.Show("Суммарный процент содержания элементов больше 100!",
+                        "Нельзя добавить элемент",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
                 }
-                else
-                {
-                    CreatingMaterial.chemicalElements.Add(element);
-                }
-               
                 UpdateTextBox();
             }
         }
@@ -69,7 +62,7 @@ namespace CalculationChargeSmelting
         {
             CreatingMaterial.Name = textBox1.Text;
             MaterialManager.Current.materials.Add(CreatingMaterial);
-            MaterialManager.SaveInternal();
+            MaterialManager.Save();
             ActiveForm.Close();
         }
 
@@ -77,8 +70,7 @@ namespace CalculationChargeSmelting
         {
             if (CreatingMaterial == null)
             {
-                CreatingMaterial = new Material();
-                CreatingMaterial.Name = textBox1.Text;
+                CreatingMaterial = new Material(textBox1.Text);
             }
             CreatingMaterial.Name = textBox1.Text;
             UpdateTextBox();

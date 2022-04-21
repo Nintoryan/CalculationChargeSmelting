@@ -36,8 +36,8 @@
             this.LoadMaterials = new System.Windows.Forms.Button();
             this.addMaterial = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.RemoveMaterial = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.RemoveMaterial = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -124,17 +124,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Список шихтовых материалов";
             // 
-            // RemoveMaterial
-            // 
-            this.RemoveMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RemoveMaterial.Location = new System.Drawing.Point(12, 426);
-            this.RemoveMaterial.Name = "RemoveMaterial";
-            this.RemoveMaterial.Size = new System.Drawing.Size(222, 24);
-            this.RemoveMaterial.TabIndex = 10;
-            this.RemoveMaterial.Text = "Убрать спалав";
-            this.RemoveMaterial.UseVisualStyleBackColor = true;
-            this.RemoveMaterial.Click += new System.EventHandler(this.RemoveMaterial_Click);
-            // 
             // richTextBox1
             // 
             this.richTextBox1.BackColor = System.Drawing.SystemColors.Menu;
@@ -145,6 +134,17 @@
             this.richTextBox1.TabIndex = 11;
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            // 
+            // RemoveMaterial
+            // 
+            this.RemoveMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RemoveMaterial.Location = new System.Drawing.Point(12, 426);
+            this.RemoveMaterial.Name = "RemoveMaterial";
+            this.RemoveMaterial.Size = new System.Drawing.Size(222, 24);
+            this.RemoveMaterial.TabIndex = 10;
+            this.RemoveMaterial.Text = "Убрать спалав";
+            this.RemoveMaterial.UseVisualStyleBackColor = true;
+            this.RemoveMaterial.Click += new System.EventHandler(this.RemoveMaterial_Click);
             // 
             // comboBox2
             // 
@@ -205,6 +205,7 @@
             this.richTextBox2.Size = new System.Drawing.Size(377, 493);
             this.richTextBox2.TabIndex = 11;
             this.richTextBox2.Text = "";
+            this.richTextBox2.TextChanged += new System.EventHandler(this.richTextBox2_TextChanged);
             // 
             // button2
             // 

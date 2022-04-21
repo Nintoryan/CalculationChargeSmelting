@@ -32,7 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.elementsToChose = new System.Windows.Forms.ComboBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.persent = new System.Windows.Forms.NumericUpDown();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,7 +42,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.persent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +61,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(96, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 17);
+            this.label1.Size = new System.Drawing.Size(54, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Состав";
             // 
@@ -85,19 +85,13 @@
             this.elementsToChose.TabIndex = 3;
             this.elementsToChose.SelectedIndexChanged += new System.EventHandler(this.elementsToChose_SelectedIndexChanged);
             // 
-            // numericUpDown1
+            // persent
             // 
-            this.numericUpDown1.DecimalPlaces = 1;
-            this.numericUpDown1.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.numericUpDown1.Location = new System.Drawing.Point(12, 361);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(204, 22);
-            this.numericUpDown1.TabIndex = 5;
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.persent.Location = new System.Drawing.Point(12, 361);
+            this.persent.Name = "persent";
+            this.persent.Size = new System.Drawing.Size(204, 22);
+            this.persent.TabIndex = 5;
+            this.persent.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // button2
             // 
@@ -123,7 +117,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(96, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 17);
+            this.label2.Size = new System.Drawing.Size(73, 16);
             this.label2.TabIndex = 8;
             this.label2.Text = "Название";
             // 
@@ -132,18 +126,12 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(223, 363);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(20, 17);
+            this.label3.Size = new System.Drawing.Size(19, 16);
             this.label3.TabIndex = 9;
             this.label3.Text = "%";
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.DecimalPlaces = 1;
-            this.numericUpDown2.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
             this.numericUpDown2.Location = new System.Drawing.Point(12, 406);
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(204, 22);
@@ -154,7 +142,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(223, 408);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(20, 17);
+            this.label4.Size = new System.Drawing.Size(19, 16);
             this.label4.TabIndex = 11;
             this.label4.Text = "%";
             // 
@@ -163,7 +151,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(12, 294);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(147, 17);
+            this.label5.Size = new System.Drawing.Size(145, 16);
             this.label5.TabIndex = 12;
             this.label5.Text = "Химический элемент";
             // 
@@ -172,7 +160,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(9, 341);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(149, 17);
+            this.label6.Size = new System.Drawing.Size(146, 16);
             this.label6.TabIndex = 13;
             this.label6.Text = "Процент содержания";
             // 
@@ -181,7 +169,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(12, 386);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 17);
+            this.label7.Size = new System.Drawing.Size(38, 16);
             this.label7.TabIndex = 14;
             this.label7.Text = "Угар";
             // 
@@ -199,7 +187,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.persent);
             this.Controls.Add(this.elementsToChose);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
@@ -207,7 +195,7 @@
             this.Name = "materialCreator";
             this.Text = "Создание материала";
             this.Load += new System.EventHandler(this.materialCreator_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.persent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -220,7 +208,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox elementsToChose;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown persent;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;

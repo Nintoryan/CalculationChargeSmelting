@@ -25,7 +25,7 @@ namespace CalculationChargeSmelting
         {
             comboBox1.Items.Clear();
             comboBox2.Items.Clear();
-            MaterialManager.LoadInternal();
+            MaterialManager.Load();
             foreach (var mat in MaterialManager.Current.materials)
             {
                 comboBox1.Items.Add(mat.ToString());
@@ -80,10 +80,22 @@ namespace CalculationChargeSmelting
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-
+            var s = "";
+            var result = new Calculator().CalculateShicht(ShichtMaterials.materials, 
+                MaterialManager.Current.GetByName(comboBox2.SelectedItem.ToString()));
+            foreach(var a in result)
+            {
+                s += $"{a.Item1.Name} = {a.Item2}%";
+            }
+            richTextBox2.Text = s;
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
