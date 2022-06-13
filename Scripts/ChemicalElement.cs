@@ -5,6 +5,7 @@ namespace CalculationChargeSmelting.Scripts
 {
     public static class ChemicalElements
     {
+        
         public static ChemicalElement[] chemicalElements = new ChemicalElement[]
         {
             ChemicalElement.Be,

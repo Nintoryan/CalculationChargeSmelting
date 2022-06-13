@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace CalculationChargeSmelting
@@ -8,13 +9,10 @@ namespace CalculationChargeSmelting
         public Form1(){InitializeComponent();}
         private void shichtType_SelectedIndexChanged(object sender, EventArgs e){}
         private void groupBox1_Enter(object sender, EventArgs e){}
-        private void button1_Click(object sender, EventArgs e)
-        {
-            var creator = new materialCreator();
-            creator.Show();
-        }
 
         public Materials ShichtMaterials = new Materials();
+
+        public List<UIMaterial> UIMaterials = new List<UIMaterial>();
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -23,34 +21,13 @@ namespace CalculationChargeSmelting
 
         private void LoadMaterials_Click(object sender, EventArgs e)
         {
-            comboBox1.Items.Clear();
             comboBox2.Items.Clear();
             MaterialManager.Load();
             foreach (var mat in MaterialManager.Current.materials)
             {
-                comboBox1.Items.Add(mat.ToString());
                 comboBox2.Items.Add(mat.ToString());
             }
         }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (comboBox1.SelectedItem == null)
-                return;
-            var newMat = MaterialManager.Current.GetByName(comboBox1.SelectedItem.ToString());
-            if (newMat == null)
-                return;
-            if (ShichtMaterials.materials.Contains(newMat))
-                return;
-            ShichtMaterials.materials.Add(newMat);
-            UpdateShichtMaterials();
-        }
-
         private void UpdateShichtMaterials()
         {
             var s = "";
@@ -58,46 +35,29 @@ namespace CalculationChargeSmelting
             {
                 s += mat.ToString() + "\n\n";
             }
-            richTextBox1.Text = s;
             
-        }
-
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RemoveMaterial_Click(object sender, EventArgs e)
-        {
-            var newMat = MaterialManager.Current.GetByName(comboBox1.SelectedItem.ToString());
-            if (newMat == null)
-                return;
-            if (!ShichtMaterials.materials.Contains(newMat))
-                return;
-            ShichtMaterials.materials.Remove(newMat);
-            UpdateShichtMaterials();
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
             var s = "";
-            var result = new Calculator().CalculateShicht(ShichtMaterials.materials, 
-                MaterialManager.Current.GetByName(comboBox2.SelectedItem.ToString()));
-            foreach(var a in result)
+            //var result = new Calculator().CalculateShicht(ShichtMaterials.materials, 
+            //    MaterialManager.Current.GetByName(comboBox2.SelectedItem.ToString()));
+            foreach(var a in ShichtMaterials.materials)
             {
-                s += $"{a.Item1.Name} = {a.Item2}%";
+                s += $"{a.Name} = {33}% \n";
             }
             richTextBox2.Text = s;
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        private void AddMaterial_Click(object sender, EventArgs e)
         {
-
+            CreateMaterial();
         }
 
-        private void richTextBox2_TextChanged(object sender, EventArgs e)
+        private void CreateMaterial()
         {
-
+            UIMaterials.Add(new UIMaterial(storage));
         }
     }
 }

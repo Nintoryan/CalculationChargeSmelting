@@ -50,6 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UIChemicalElement.cs" />
+    <Compile Include="UIMaterial.cs" />
     <Compile Include="Scripts\Calculator.cs" />
     <Compile Include="Scripts\ChemicalElement.cs" />
     <Compile Include="Scripts\MaterialsManager.cs" />
